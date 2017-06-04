@@ -6959,8 +6959,8 @@ a.list-group-item-danger.active:focus {
     min-width:300px;
 }
 .centralizar{
-    margin-left:10%;
-    margin-right:10%;
+    width: 935px;
+    margin: 0 auto;
 
 }
 .painel_second2 {
