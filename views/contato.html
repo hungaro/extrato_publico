@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+    <!-- Page title -->
+    <title>Extrato Publico</title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="../Content/animate.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.css" rel="stylesheet" />
+    <link href="../Content/stroke-icons.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/menu.js"></script>
+    <style type="text/css">
+        .jqstooltip {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            visibility: hidden;
+            background: rgb(0, 0, 0) transparent;
+            background-color: rgba(0,0,0,0.6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+            white-space: nowrap;
+            padding: 5px;
+            border: 1px solid white;
+            z-index: 10000;
+        }
+
+        .jqsfield {
+            color: white;
+            font: 10px arial, san serif;
+            text-align: left;
+        }
+    </style>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { packages: ['corechart', 'bar'] });
+        google.charts.setOnLoadCallback(drawAnnotations);
+
+        function drawAnnotations() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('timeofday', 'Time of Day');
+            data.addColumn('number', 'Motivation Level');
+            data.addColumn({ type: 'string', role: 'annotation' });
+            data.addColumn('number', 'Energy Level');
+            data.addColumn({ type: 'string', role: 'annotation' });
+
+            data.addRows([
+              [{ v: [8, 0, 0], f: '8 am' }, 1, '1', .25, '.2'],
+              [{ v: [9, 0, 0], f: '9 am' }, 2, '2', .5, '.5'],
+              [{ v: [10, 0, 0], f: '10 am' }, 3, '3', 1, '1'],
+              [{ v: [11, 0, 0], f: '11 am' }, 4, '4', 2.25, '2'],
+              [{ v: [12, 0, 0], f: '12 pm' }, 5, '5', 2.25, '2'],
+              [{ v: [13, 0, 0], f: '1 pm' }, 6, '6', 3, '3'],
+              [{ v: [14, 0, 0], f: '2 pm' }, 7, '7', 3.25, '3'],
+              [{ v: [15, 0, 0], f: '3 pm' }, 8, '8', 5, '5'],
+              [{ v: [16, 0, 0], f: '4 pm' }, 9, '9', 6.5, '6'],
+              [{ v: [17, 0, 0], f: '5 pm' }, 10, '10', 10, '10'],
+            ]);
+
+            var options = {
+                title: 'Motivation and Energy Level Throughout the Day',
+                annotations: {
+                    alwaysOutside: true,
+                    textStyle: {
+                        fontSize: 14,
+                        color: '#000',
+                        auraColor: 'none'
+                    }
+                },
+                hAxis: {
+                    title: 'Time of Day',
+                    format: 'h:mm a',
+                    viewWindow: {
+                        min: [7, 30, 0],
+                        max: [17, 30, 0]
+                    }
+                },
+                vAxis: {
+                    title: 'Rating (scale of 1-10)'
+                }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+
+        google.charts.load('current', { 'packages': ['table'] });
+        google.charts.setOnLoadCallback(drawTable);
+
+        function drawTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'CNPJ');
+            data.addColumn('string', 'Fornecedor');
+            data.addColumn('number', 'Ano');
+            data.addColumn('number', 'Mês');
+            data.addColumn('number', 'Valor');
+
+            data.addRows(7);
+            data.setCell(0, 0, '123456789-99');
+            data.setCell(0, 1, 'zezao do bar');
+            data.setCell(0, 2, 333);
+            data.setCell(0, 3, 2);
+            data.setCell(0, 4, 5550);
+
+            data.setCell(1, 0, '123456789-99');
+            data.setCell(1, 1, 'zezao do bar');
+            data.setCell(1, 2, 333);
+            data.setCell(1, 3, 2);
+            data.setCell(1, 4, 5550);
+
+            data.setCell(2, 0, '123456789-99');
+            data.setCell(2, 1, 'zezao do bar');
+            data.setCell(2, 2, 333);
+            data.setCell(2, 3, 2);
+            data.setCell(2, 4, 5550);
+
+            data.setCell(3, 0, '123456789-99');
+            data.setCell(3, 1, 'zezao do bar');
+            data.setCell(3, 2, 333);
+            data.setCell(3, 3, 2);
+            data.setCell(3, 4, 5550);
+
+            data.setCell(4, 0, '123456789-99');
+            data.setCell(4, 1, 'zezao do bar');
+            data.setCell(4, 2, 333);
+            data.setCell(4, 3, 2);
+            data.setCell(4, 4, 5550);
+
+            data.setCell(5, 0, '123456789-99');
+            data.setCell(5, 1, 'zezao do bar');
+            data.setCell(5, 2, 333);
+            data.setCell(5, 3, 2);
+            data.setCell(5, 4, 5550);
+
+            data.setCell(6, 0, '123456789-99');
+            data.setCell(6, 1, 'zezao do bar');
+            data.setCell(6, 2, 333);
+            data.setCell(6, 3, 2);
+            data.setCell(6, 4, 5550);
+
+
+
+
+            var table = new google.visualization.Table(document.getElementById('table_div'));
+
+            table.draw(data, { showRowNumber: true, width: '100%', height: '100%' });
+        }
+
+        google.charts.load('current', { 'packages': ['treemap'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+              ['Global', null, 0, 0],
+              ['America', 'Global', 0, 0],
+              ['Europe', 'Global', 0, 0],
+              ['Asia', 'Global', 0, 0],
+              ['Australia', 'Global', 0, 0],
+              ['Africa', 'Global', 0, 0],
+              ['Brazil', 'America', 11, 10],
+              ['USA', 'America', 52, 31],
+              ['Mexico', 'America', 24, 12],
+              ['Canada', 'America', 16, -23],
+              ['France', 'Europe', 42, -11],
+              ['Germany', 'Europe', 31, -2],
+              ['Sweden', 'Europe', 22, -13],
+              ['Italy', 'Europe', 17, 4],
+              ['UK', 'Europe', 21, -5],
+              ['China', 'Asia', 36, 4],
+              ['Japan', 'Asia', 20, -12],
+              ['India', 'Asia', 40, 63],
+              ['Laos', 'Asia', 4, 34],
+              ['Mongolia', 'Asia', 1, -5],
+              ['Israel', 'Asia', 12, 24],
+              ['Iran', 'Asia', 18, 13],
+              ['Pakistan', 'Asia', 11, -52],
+              ['Egypt', 'Africa', 21, 0],
+              ['S. Africa', 'Africa', 30, 43],
+              ['Sudan', 'Africa', 12, 2],
+              ['Congo', 'Africa', 10, 12],
+              ['Zaire', 'Africa', 8, 10]
+            ]);
+
+            tree = new google.visualization.TreeMap(document.getElementById('chart_hot'));
+
+            tree.draw(data, {
+                minColor: '#f00',
+                midColor: '#ddd',
+                maxColor: '#0d0',
+                headerHeight: 15,
+                fontColor: 'black',
+                showScale: true
+            });
+
+        }
+
+        google.charts.load('current', { packages: ['corechart', 'bar'] });
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['CNPJ', 'Mais Apontados', ],
+              ['CNPJ1', 8175000],
+              ['CNPJ2', 3792000],
+              ['CNPJ3', 2695000],
+              ['CNPJ4', 2099000],
+              ['CNPJ5', 1526000]
+            ]);
+
+            var options = {
+                title: 'CNPJs que mais geraram notas',
+                chartArea: { width: '50%' },
+                hAxis: {
+                    title: 'Somatória em Reais',
+                    minValue: 0
+                },
+                vAxis: {
+                    title: ''
+                }
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart_cnpj'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+</head>
+
+<body class="pace-done">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
+        </div>
+        <div class="pace-activity"></div>
+    </div>
+    <!-- Wrapper-->
+    <div class="wrapper">
+        <!-- Header-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div id="mobile-menu">
+                        <div class="left-nav-toggle">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-th"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <a class="navbar-brand" href="index.html">
+                        LOGO IMG
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <div class="left-nav-toggle">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-th"></i>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- End header-->
+        <!-- Navigation-->
+        <aside class="navigation">
+            <nav>
+                <ul class="nav luna-nav">
+                    <li class="nav-category">
+                        Menu
+                    </li>
+                    <li>
+                        <a href="index.html">Painel de Gastos</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            Conheça o Projeto
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="contato.html">
+                            Entre em contato Conosco
+                        </a>
+                    </li>
+                    <li class="nav-info">
+                        <i class="pe pe-7s-shield text-accent"></i>
+                        <div class="m-t-xs">
+                            <span class="c-white">Extrato Público</span> é uma interface de demonstração dos gastos públicos.
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- End navigation-->
+        <!-- Main content-->
+                 <section class="content">
+                    <div class="container-fluid margin-top">
+                        <div class="row center-block">
+                            <div class="panel panel-filled text-center">
+                                <h1 class="h1">Ficou com alguma duvida a acessar nossa ferramenta ?</h1>
+                            </div>
+                            <div class="panel panel-filled col-md-5 col-xs-12">
+                                <h3 class="h3 text-center">Nós queremos ouvir sua sugestão</h3>
+                                <p>Nós somos uma equipe de jovens desenvolvedores e precisamos de toda a ajuda possível, nos ajude a testar a ferramenta, nos ajude a divulgar e fazer chegar ao conhecimento de todo cidadão o destino que está sendo aplicado o dinheiro público, não exite em nos contactar.</p>
+                            </div>
+                            <div class="panel panel-filled col-md-5 col-xs-12 pull-right">
+                                <h3 class="h3">Monitorar os gastos públicos é uma tarefea de todos.</h3>
+                                <p>Nós somos uma equipe de jovens desenvolvedores e precisamos de toda a ajuda possível, nos ajude a testar a ferramenta, nos ajude a divulgar e fazer chegar ao conhecimento de todo cidadão o destino que está sendo aplicado o dinheiro público, não exite em nos contactar.</p>
+
+                            </div>
+                            <div class="panel panel-filled col-md-12 col-xs-12 text-center">
+                                <h3 class="h3">Encontrou algum erro nos dados ?</h3>
+                            </div>
+                            <div class="panel panel-filled col-md-5 col-xs-12 text-center "><a href="https://www.facebook.com/extratopublico/">Facebook </a><i class="glyphicon glyphicon-thumbs-up"></i></div>
+                            <div class="panel panel-filled col-md-5 col-xs-12 text-center pull-right"><a href="mailto:extrapublico@gmail.com?Subject=Extrato Público" target="_top">Enviar Email </a><i class="glyphicon glyphicon-envelope"></i></div>
+                            </div>
+                    </div>
+                </section>
+
+                
+
+
+</body>
+</html>
