@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+body {
+    background-color: #363636
+}
+
+h1 {
+    color: white
+}
+
+p {
+    color: #9C9C9C
+}

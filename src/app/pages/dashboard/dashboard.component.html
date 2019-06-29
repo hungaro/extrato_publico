@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Extrato Público</h1>
+    <app-filtro (novaData)="receberNovaData($event)"></app-filtro>
+
+    <div style="display: block; width: 400px">
+        <canvas baseChart width="400" height="400"
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+    <div *ngIf="dados">
+      <h1>Total de notas</h1>
+      <p class="text-white">{{ dados.length }}</p>
+    </div>
+</div>
+
+<!-- <app-login></app-login> -->
+

@@ -1,0 +1,22 @@
+<div class="row right">
+
+      <ng-select class="width"
+        [items]="mes"
+        [multiple]="false"
+        bindLabel="label"
+        bindValue="value"
+        (change)="enviarData()"
+        placeholder="Mês"
+        [(ngModel)]="selectedMes">
+      </ng-select>
+
+      <ng-select class=""
+        [items]="ano"
+        [multiple]="false"
+        (change)="enviarData()"
+        placeholder="Ano"
+        [(ngModel)]="selectedAno">
+      </ng-select>
+
+  </div>
+
