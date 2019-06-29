@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   ];
   public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
-    responsive: false,
+    responsive: true,
   };
   public lineChartColors: Color[] = [
     {
