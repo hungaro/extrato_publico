@@ -1,8 +1,31 @@
-<div class="container">
-    <h1>Extrato Público</h1>
-    <app-filtro (novaData)="receberNovaData($event)"></app-filtro>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <h1>Extrato Público</h1>
+        <span class="text-muted">Coleção de Débitos de vereadores da Câmara de São Paulo</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div style="background-color:rgb(90, 89, 89); padding: 20px; height: 300px; border-radius: 10px">
+          <app-filtro (novaData)="receberNovaData($event)"></app-filtro>
+          <div *ngIf="dados">
+              <h1>Total de notas</h1>
+              <p class="text-white">{{ dados.length }}</p>
+          </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <div   style="background-color:rgb(90, 89, 89); padding: 20px; height: 300px; border-radius: 10px"></div>
+    </div>
+    <div class="col-md-4">
+     <div   style="background-color:rgb(90, 89, 89); padding: 20px; height: 300px; border-radius: 10px"></div>
+    </div>
+  </div>
 
-    <div style="display: block; width: 400px">
+    <!--  -->
+
+    <!-- <div style="display: block; width: 400px">
         <canvas baseChart width="400" height="400"
           [datasets]="lineChartData"
           [labels]="lineChartLabels"
@@ -12,12 +35,16 @@
           [chartType]="lineChartType"
           [plugins]="lineChartPlugins">
         </canvas>
+      </div> -->
+
+      <!-- <div class="col-md-6">
+          <app-doughnut *ngIf="dados" [data]="dados"></app-doughnut>
       </div>
-    <div *ngIf="dados">
-      <h1>Total de notas</h1>
-      <p class="text-white">{{ dados.length }}</p>
-    </div>
+    </div> -->
+
+
 </div>
+
 
 <!-- <app-login></app-login> -->
 

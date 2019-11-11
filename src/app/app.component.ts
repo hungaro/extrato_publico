@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { MenuLateralService } from './componentes/menu-lateral/menu-lateral.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ExtratoPublico';
+  openMenu= true;
+
+  constructor (
+    private menuLateralService: MenuLateralService,
+    private cdRef:ChangeDetectorRef
+    ){
+
+  }
+
+  ngOnInit() {
+    this.menuLateralService.showMenu.subscribe(
+      open => {
+        this.openMenu = open;
+        this.cdRef.detectChanges();
+      }
+    );
+  }
 }

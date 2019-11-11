@@ -1,0 +1,17 @@
+.container-fluid{
+  overflow: hidden;
+  min-height: calc(100%);
+  border: 1px solid black;
+}
+.container-fluid > div > div{
+  padding-bottom: 500em;
+  margin-bottom: -500em;
+}
+.menu-lateral {
+  background: rgba(117,117,117,0.05);
+  min-height: 325px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+

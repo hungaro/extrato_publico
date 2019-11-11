@@ -1,0 +1,39 @@
+a:hover{
+  text-decoration: none
+  }
+  .active {
+    font-weight: 500;
+  }
+  .sidebar{
+    position: relative
+  }
+  .nav-item{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    /* top: 0; */
+  }
+  .sidebar .nav-link {
+    padding: .2rem 1rem;
+  }
+  .search {
+    padding-top: 42px;
+    padding-bottom: 42px;
+    max-width: 90%;
+    font-size: 16px;
+    color: #757575;
+    line-height: 24px;
+
+  }
+  .search i{
+    padding-top: 42px;
+    padding-left: 20px;
+
+  }
+  .form-control{
+    background-color: transparent;
+
+  }
+
+  .card{
+    background-color: black;
+  }
