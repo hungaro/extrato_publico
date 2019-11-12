@@ -1,14 +1,21 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         <h1>Extrato Público</h1>
         <span class="text-muted">Coleção de Débitos de vereadores da Câmara de São Paulo</span>
+    </div>
+    <div class="col-md-2">
+      <span class="text-white">Escolha o mês e o ano: </span>
+    </div>
+    <div class="col-md-4 d-inline">
+
+      <app-filtro (novaData)="receberNovaData($event)"></app-filtro>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
       <div style="background-color:rgb(90, 89, 89); padding: 20px; height: 300px; border-radius: 10px">
-          <app-filtro (novaData)="receberNovaData($event)"></app-filtro>
+
           <div *ngIf="dados">
               <h1>Total de notas</h1>
               <p class="text-white">{{ dados.length }}</p>

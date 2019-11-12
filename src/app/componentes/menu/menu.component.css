@@ -1,9 +1,8 @@
-.menu {
-  background-color: orange;
-  min-height: 3rem;
+.bg-menu {
+  background-color: white;
 }
+
 i {
-  margin-top: 1rem;
-  padding-left: 0.5rem;
-  color: #ffffff;
+  line-height: 1.5;
+  font-size: 2.5rem;
 }
