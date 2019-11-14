@@ -26,18 +26,41 @@ export class DashboardComponent implements OnInit {
   // public lineChartLegend = true;
   // public lineChartType = 'line';
   // public lineChartPlugins = [];
-   mes;
-   ano;
+   mes = 10;
+   ano = 2019;
   dados: DebitoVereador[] ;
+  data: any;
  // @Input('mes') mes: number;
 
   constructor(
     private dashboardService: DashboardService
-  ) { }
+  ) {
+    this.data = {
+      labels: ['A','B','C'],
+      datasets: [
+          {
+              data: [300, 50, 100],
+              backgroundColor: [
+                  "#FF6384",
+                  "#36A2EB",
+                  "#FFCE56"
+              ],
+              hoverBackgroundColor: [
+                  "#FF6384",
+                  "#36A2EB",
+                  "#FFCE56"
+              ]
+          }]
+      };
+  }
 
   ngOnInit() {
-  //this.buscarDados(this.mes, this.ano);
+    this.buscarDados(this.mes, this.ano);
   }
+
+  selectData(event) {
+    // this.messageService.add({severity: 'info', summary: 'Data Selected', 'detail': this.data.datasets[event.element._datasetIndex].data[event.element._index]});
+}
 
   buscarDados(mes, ano){
     this.dashboardService.getDados(mes, ano).subscribe(

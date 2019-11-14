@@ -27,8 +27,8 @@ export class FiltroComponent implements OnInit {
 
   ano = [ 2015, 2016 , 2017, 2018, 2019 ];
 
-  selectedMes;
-  selectedAno;
+  selectedMes = 10;
+  selectedAno = 2019;
   constructor() { }
 
   ngOnInit() {

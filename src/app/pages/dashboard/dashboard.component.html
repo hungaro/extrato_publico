@@ -8,25 +8,40 @@
       <span class="text-white">Escolha o mês e o ano: </span>
     </div>
     <div class="col-md-4 d-inline">
-
       <app-filtro (novaData)="receberNovaData($event)"></app-filtro>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-4">
-      <div style="background-color:rgb(90, 89, 89); padding: 20px; height: 300px; border-radius: 10px">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title text-center">Monitore os gastos dos Vereadores de São Paulo</h5>
+      <p class="card-text text-center">Cada vereador dispõe também de uma verba destinada ao Auxilio-Encargos Gerais de Gabinete de até R$ 282.037,76 por ano,
+         além dos proventos salariais e da verba para até 17 assistentes. Esta verba é destinada ao custeio de serviços gráficos, correios, assinaturas de jornais,
+        deslocamentos por toda a cidade e materiais de escritório, entre outras despesas.</p>
+    </div>
+  </div>
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ dados.length }}</h5>
+        <small class="card-text" *ngIf="dados">é total de notas emitidas no mês <span class="text-warning">{{ mes }}/{{ ano }}</span></small>
+        <p-chart type="radar" [data]="data"></p-chart>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p-chart type="doughnut" [data]="data"></p-chart>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <!-- <p-toast [style]="{marginTop: '80px'}"></p-toast> -->
 
-          <div *ngIf="dados">
-              <h1>Total de notas</h1>
-              <p class="text-white">{{ dados.length }}</p>
-          </div>
-    </div>
-    </div>
-    <div class="col-md-4">
-      <div   style="background-color:rgb(90, 89, 89); padding: 20px; height: 300px; border-radius: 10px"></div>
-    </div>
-    <div class="col-md-4">
-     <div   style="background-color:rgb(90, 89, 89); padding: 20px; height: 300px; border-radius: 10px"></div>
+        <p-chart type="line" [data]="data" (onDataSelect)="selectData($event)"></p-chart>
+      </div>
     </div>
   </div>
 
