@@ -1,3 +1,4 @@
+import { GoogleChartModule } from './../google-chart/google-chart.module';
 import { ComponentesModule } from './../componentes/componentes.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     PagesRoutingModule,
     FormsModule,
     ComponentesModule,
-    ChartModule
+    ChartModule,
+    GoogleChartModule
   ]
 })
 export class PagesModule { }

@@ -17,6 +17,7 @@ import { SlideMenuModule } from 'primeng/slidemenu';
 import { MenuLateralComponent } from './componentes/menu-lateral/menu-lateral.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { MenuLateralComponent } from './componentes/menu-lateral/menu-lateral.co
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    SlideMenuModule
+    SlideMenuModule,
+
 
   ],
   providers: [],

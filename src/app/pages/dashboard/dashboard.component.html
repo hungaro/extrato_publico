@@ -22,47 +22,12 @@
   <div class="card-deck">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">{{ dados.length }}</h5>
+        <h5 *ngIf="dados" class="card-title">{{ dados.length }}</h5>
         <small class="card-text" *ngIf="dados">é total de notas emitidas no mês <span class="text-warning">{{ mes }}/{{ ano }}</span></small>
-        <p-chart type="radar" [data]="data"></p-chart>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p-chart type="doughnut" [data]="data"></p-chart>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <!-- <p-toast [style]="{marginTop: '80px'}"></p-toast> -->
-
-        <p-chart type="line" [data]="data" (onDataSelect)="selectData($event)"></p-chart>
+       <app-area *ngIf="dados" [dados]="dados"></app-area>
       </div>
     </div>
   </div>
-
-    <!--  -->
-
-    <!-- <div style="display: block; width: 400px">
-        <canvas baseChart width="400" height="400"
-          [datasets]="lineChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins">
-        </canvas>
-      </div> -->
-
-      <!-- <div class="col-md-6">
-          <app-doughnut *ngIf="dados" [data]="dados"></app-doughnut>
-      </div>
-    </div> -->
 
 
 </div>
