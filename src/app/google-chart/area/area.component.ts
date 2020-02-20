@@ -58,7 +58,6 @@ export class AreaComponent implements OnInit {
     this.notas.filter(a => {
       dataNotas.push([a.vereador, a.totalDeNotas, "red"])
     })
-    console.log(dataNotas)
     var data = this.gLib.visualization.arrayToDataTable(
       dataNotas
     );

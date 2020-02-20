@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
    ano = 2019;
   dados: DebitoVereador[] ;
   data: any;
+  countMeses = [{'mes': 0, 'total':0}];
  // @Input('mes') mes: number;
 
   constructor(
@@ -31,11 +32,26 @@ export class DashboardComponent implements OnInit {
 
   buscarDados(mes, ano){
     this.dados = undefined;
+    // this.countMeses = undefined;
     this.dashboardService.getDados(mes, ano).subscribe(
       res => {
         this.dados = res;
+        this.countMeses[0] = {'mes': mes, 'total': res.length};
+        this.dashboardService.getDados(mes -1, ano).subscribe(
+          res => {
+            let mesUltimo = mes -1;
+            this.countMeses[1] = {'mes': mesUltimo, 'total': res.length};
+          }
+        );
+        this.dashboardService.getDados(mes -2, ano).subscribe(
+          res => {
+            let mesPenultimo = mes -2;
+            this.countMeses[2] = {'mes': mesPenultimo, 'total':res.length}
+          }
+        )
       }
-    )
+    );
+
   }
 
   receberNovaData(novaData){

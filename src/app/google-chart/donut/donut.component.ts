@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GoogleChartService } from  '../service/google-chart.service';
 
 
@@ -9,6 +9,8 @@ import { GoogleChartService } from  '../service/google-chart.service';
 })
 export class DonutComponent implements OnInit {
 
+  @Input() dados;
+  @Input() id;
   private gLib: any;
 
   constructor(private gChartService : GoogleChartService) {
@@ -35,7 +37,7 @@ export class DonutComponent implements OnInit {
       backgroundColor: '#5a5959',
     };
 
-    let chart = new this.gLib.visualization.PieChart(document.getElementById('donutchart'));
+    let chart = new this.gLib.visualization.PieChart(document.getElementById(this.id));
     chart.draw(data, options);
   }
 

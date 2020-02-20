@@ -2,10 +2,10 @@
 <app-menu></app-menu>
 <div class="container-fluid">
   <div class="row">
-    <div  *ngIf="openMenu" class="col-12 col-lg-2 text-left pt-3 menu-lateral">
+    <div  *ngIf="!openMenu" class="col-12 col-lg-2 text-left pt-3 menu-lateral">
       <app-menu-lateral></app-menu-lateral>
     </div>
-    <div class="col-12 pt-5" [class.col-lg-10]="openMenu" [class.col-lg-12]="!openMenu">
+    <div class="col-12 pt-5" [class.col-lg-10]="openMenu" [class.col-lg-12]="openMenu">
         <router-outlet></router-outlet>
     </div>
   </div>

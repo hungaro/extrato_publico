@@ -19,7 +19,30 @@
         deslocamentos por toda a cidade e materiais de escritório, entre outras despesas.</p>
     </div>
   </div>
-  <div class="card-deck">
+  <div class="card-deck" >
+    <div class="card">
+      <div class="card-body">
+        <h5 *ngIf="dados" class="card-title">{{ dados.length }}</h5>
+        <small class="card-text" *ngIf="dados">é total de notas emitidas no mês <span class="text-warning">{{ mes }}/{{ ano }}</span></small>
+        <app-line *ngIf="countMeses.length > 1" [countMeses]="countMeses"></app-line>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 *ngIf="dados" class="card-title">{{ dados.length }}</h5>
+        <small class="card-text" *ngIf="dados">é total de notas emitidas no mês <span class="text-warning">{{ mes }}/{{ ano }}</span></small>
+       <app-donut *ngIf="dados" [id]="'2'" [dados]="dados"></app-donut>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 *ngIf="dados" class="card-title">{{ dados.length }}</h5>
+        <small class="card-text" *ngIf="dados">é total de notas emitidas no mês <span class="text-warning">{{ mes }}/{{ ano }}</span></small>
+       <app-donut *ngIf="dados" [id]="'3'" [dados]="dados"></app-donut>
+      </div>
+    </div>
+  </div>
+  <div class="card-deck mt-4">
     <div class="card">
       <div class="card-body">
         <h5 *ngIf="dados" class="card-title">{{ dados.length }}</h5>
@@ -28,6 +51,7 @@
       </div>
     </div>
   </div>
+
 
 
 </div>
